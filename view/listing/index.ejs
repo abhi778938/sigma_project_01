@@ -1,0 +1,24 @@
+<% layout("/layout/boilerplate") -%>
+<body>
+  <h3>All Listings</h3>
+<div class="row row-col-lg-3 row-col-md-2 row-col-sm-1">
+  <ul class="list-unstyled d-flex flex-wrap gap-5 ">
+    <% for (let listing of allListing) { %>
+      <li>
+        <a href="/listing/<%= listing._id %>" class="text-decoration-none text-dark" alt="listing_img">
+          <div class="card col shadow-sm listing-card" style="width: 25rem;">
+            <img src="<%=listing.image.url %>" class="card-img-top" alt="listing_img" style ="height: 25rem;">
+              <div class="card-img-overlay "><h3>MajorPro</h3></div>
+            <div class="card-body">
+              <p class="card-price mb-0">
+                <b><%= listing.title %></b> - ₹<%= listing.price %>
+              </p>
+            </div>
+          </div>
+        </a>
+      </li>
+    <% } %>
+  </ul>
+</div>
+ 
+</body>

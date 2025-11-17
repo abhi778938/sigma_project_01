@@ -1,0 +1,65 @@
+<% layout("/layout/boilerplate") -%>
+
+  <body class="bg-light">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-4">
+              <h3 class="text-center mb-4 fw-bold">Editlisting</h3>
+
+              <form method="POST" action="/listing/<%=listing._id %>?_method=PUT" novalidate class="row g-3 needs-validation">
+                <!-- Title -->
+                <div class="mb-3">
+                  <label class="form-label">Title</label>
+                  <input name="Listing[title]" type="text" class="form-control" value="<%=listing.title %>" required>
+                   <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-3">
+                  <label class="form-label">Description</label>
+                  <textarea name="Listing[description]" class="form-control" rows="3"><%= listing.description %></textarea>
+                </div>
+
+                <!-- Price -->
+                <div class="mb-3">
+                  <label class="form-label">Price (₹)</label>
+                  <input name="Listing[price]" type="number" class="form-control" value="<%=listing.price %>" min="0" required>
+                </div>
+
+                <!-- Image URL -->
+                <div class="mb-3">
+                  <label class="form-label">Image URL</label>
+                  <input name="Listing[image]" type="url" class="form-control" value="<%= listing.image %>" >
+                </div>
+
+                <!-- Location -->
+                <divl class="mb-3">
+                  <label class="form-label">Location</label>
+                  <input name="Listing[location]" type="text" class="form-control" value="<%=listing.location %>"required>
+                </divl
+                <!-- Country -->
+                <div class="mb-3">
+                  <label class="form-label">Country</label>
+                  <input name="Listing[country]" type="text" class="form-control" value="<%= listing.country %>"required>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-success btn-lg rounded-3">
+                    Update ✨
+                  </button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+

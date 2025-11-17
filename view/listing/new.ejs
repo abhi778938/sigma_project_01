@@ -1,0 +1,78 @@
+<% layout("/layout/boilerplate") -%>
+  <html>
+
+  <body class="bg-light">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-4">
+              <h3 class="text-center mb-4 fw-bold">Create New Listing</h3>
+
+              <form method="POST" action="/listing" novalidate class="row g-3 needs-validation">
+                <!-- Title -->
+                <div class="mb-3">
+                  <label class="form-label">Title</label>
+                  <input name="Listing[title]" type="text" class="form-control" placeholder="Enter your title" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-3">
+                  <label class="form-label">Description</label>
+                  <textarea name="Listing[description]" class="form-control" rows="3"
+                    placeholder="Enter your description"></textarea>
+                </div>
+
+                <!-- Price -->
+                <div class="mb-3">
+                  <label class="form-label">Price (₹)</label>
+                  <input name="Listing[price]" type="text" class="form-control" placeholder="Enter the price" min="0"
+                    required>
+                </div>
+
+                <!-- Image URL -->
+                <div class="mb-3">
+                  <label class="form-label">Image URL</label>
+                  <input name="Listing[image]" type="url" class="form-control" placeholder="Enter image link">
+                </div>
+
+                <!-- Location -->
+                <div class="mb-3">
+                  <label class="form-label">Location</label>
+                  <input name="Listing[location]" type="text" class="form-control" placeholder="Enter your location">
+                   <div class="invalid-feedback">
+      Please provide a valid city.
+    </div>
+                </div>
+
+                <!-- Country -->
+                <div class="mb-3">
+                  <label class="form-label">Country</label>
+                  <input name="Listing[country]" type="text" class="form-control" placeholder="Enter your country name">
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                   <div id="invalidCheck3Feedback" class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary btn-lg rounded-3">
+                    Done ✅
+                  </button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  </html>
